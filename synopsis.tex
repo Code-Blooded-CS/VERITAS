@@ -1,0 +1,281 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==============================================================================
+% VERITAS: A Verified Evidence-Based Multi-Agent Framework
+% Final Year Project Synopsis (~2000 Words)
+% Team: Code Blooded | Department of Computer Science and Engineering
+% ==============================================================================
+
+% --- Core Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Color Palette ---
+\definecolor{primaryblue}{rgb}{0.05, 0.25, 0.55}
+\definecolor{darkgray}{rgb}{0.25, 0.25, 0.25}
+
+% --- Hyperlink Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    citecolor=primaryblue,
+    urlcolor=primaryblue
+}
+
+% --- Header & Footer (Page X of Y) ---
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small\textcolor{darkgray}{VERITAS | Team: Code Blooded}}
+\lhead{\small\textcolor{darkgray}{Dept. of Computer Science and Engineering}}
+\rfoot{\small\textcolor{darkgray}{Page \textbf{\thepage} of \pageref{LastPage}}}
+\lfoot{\small\textcolor{darkgray}{Confidential -- For Academic Review Only}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Section Styling ---
+\titleformat{\section}{\large\bfseries\color{primaryblue}}{\thesection}{0.7em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.2ex plus 0.3ex minus 0.1ex}{0.6ex plus 0.1ex}
+\titlespacing*{\subsection}{0pt}{0.9ex plus 0.2ex minus 0.1ex}{0.4ex}
+
+\begin{document}
+
+% ==============================================================================
+% 1. TITLE & METADATA BLOCK
+% ==============================================================================
+\begin{center}
+    {\LARGE \textbf{\color{primaryblue} PROJECT SYNOPSIS}}\\[0.4em]
+    {\Large \textbf{VERITAS: A Verified Evidence-Based Multi-Agent Framework for Literature Discovery, Patent Landscaping, and Automated Academic Synthesis}}\\[0.3em]
+    {\normalsize \textit{A Multi-Agent System for Scientific Plausibility Checking, PRISMA Review, and Live Link Verification}}\\[0.8em]
+
+    \textbf{Department of Computer Science and Engineering}\\[0.2em]
+    \textbf{Team Name:} \textit{Code Blooded} \quad $\vert$ \quad \textbf{Academic Session:} 2026--2027\\[0.3em]
+    \hrule
+\end{center}
+
+\vspace{0.2em}
+\noindent
+\textbf{Project Batch Members (Team: Code Blooded):}
+\begin{enumerate}[leftmargin=1.8em,noitemsep]
+    \item \textbf{Pritam Jana} (\textit{Team Leader}) \hfill University Roll No: \textbf{25500123099}
+    \item \textbf{Sachin Kumar Singh} \hfill University Roll No: \textbf{25500123122}
+    \item \textbf{Rohit Kumar Ojha} \hfill University Roll No: \textbf{25500123118}
+    \item \textbf{Sagar Jha} \hfill University Roll No: \textbf{25500123124}
+    \item \textbf{Bhaskar Raj} \hfill University Roll No: \textbf{25500123061}
+\end{enumerate}
+
+\vspace{0.3em}
+\noindent
+\textbf{Project Supervisor / Guide:} \textbf{Prof. (Dr.) Amitava Halder}, Department of Computer Science and Engineering\\[0.2em]
+\textbf{Head of Department (HoD):} \textbf{Prof. (Dr.) Amrut Ranjan Jena}, Department of Computer Science and Engineering
+
+\vspace{0.3em}
+\hrule
+\vspace{0.5em}
+
+% ==============================================================================
+% 2. ABSTRACT
+% ==============================================================================
+\begin{abstract}
+Conducting a comprehensive literature review is a critical yet time-consuming task for academic researchers and engineering students. While modern generative AI tools can summarize text, they frequently fabricate non-existent citations, provide dead links, and uncritically accept scientifically impossible queries. This project introduces \textbf{VERITAS} (\textbf{V}erified \textbf{E}vidence-based \textbf{R}esearch, \textbf{I}P \& \textbf{T}axonomy \textbf{A}utonomous \textbf{S}ystem), an autonomous multi-agent web platform for literature discovery and patent prior-art analysis. VERITAS employs specialized AI agents to verify research topic plausibility, apply the PRISMA 2020 systematic review protocol, search academic papers and patents concurrently, and validate all source links in real time via live HTTP status checks. The platform features an interactive split-pane web reader and exports publication-ready IEEE/ACM LaTeX documents, ensuring verifiable and hallucination-free academic research.
+\end{abstract}
+
+% ==============================================================================
+% 3. INTRODUCTION & BACKGROUND
+% ==============================================================================
+\section{Introduction \& Background}
+A comprehensive literature review is the foundation of any serious academic research project or engineering dissertation. Before proposing a novel methodology, developing software, or designing a system, researchers and graduate students must understand the current state of the art, identify open research gaps, and establish benchmark performance. In addition to academic papers, technical researchers must examine registered patents to ensure their proposed designs do not infringe upon existing intellectual property.
+
+In recent years, the exponential growth of scientific publishing has made literature discovery increasingly difficult. Thousands of new papers are uploaded every month across preprint archives like arXiv and bioRxiv, peer-reviewed indices like IEEE Xplore, ACM Digital Library, Springer, and PubMed, alongside global patent offices like USPTO and Google Patents. Manually searching across these disjointed platforms, reading hundreds of abstracts, downloading full-text PDFs, extracting relevant claims, and verifying citation chains requires weeks of repetitive, tedious labor.
+
+The emergence of generative AI and Large Language Models (LLMs) has led to attempts at automating this process. Tools such as ChatGPT, Claude, and basic retrieval-augmented generation wrappers can summarize documents and answer natural language questions. However, these generic tools were not designed to meet the rigorous standards of scientific inquiry. When applied to academic research, single-agent LLMs exhibit severe reliability failures, hallucinating non-existent paper titles, fabricating citations, and uncritically summarizing impossible scientific premises. To make automated academic synthesis viable, researchers require a disciplined system that combines multi-agent orchestration, formal research screening protocols, patent landscaping, and live source verification.
+
+% ==============================================================================
+% 4. PROBLEM STATEMENT & MOTIVATION
+% ==============================================================================
+\section{Problem Statement \& Motivation}
+Existing approaches to academic literature discovery suffer from a fundamental divide between slow, manual human investigation and unreliable, ungrounded artificial intelligence tools. While manual literature reviews guarantee human judgment and source accuracy, they require dozens of hours of manual search and frequently miss cross-disciplinary citations or newly registered patents. Conversely, current generative AI tools suffer from four critical deficiencies that prevent their adoption in academic and professional settings:
+
+\begin{enumerate}[leftmargin=*,noitemsep]
+    \item \textbf{Premise Gullibility and Absence of Sanity Checking:} Generic language models are trained to generate plausible-sounding text rather than verify facts. When prompted with flawed, pseudoscientific, or physically impossible research ideas (such as ``an elephant hatching an egg'' or ``perpetual motion energy systems''), they write fictional summaries instead of catching the underlying contradiction.
+    \item \textbf{Fabricated Citations and Dead URLs:} Studies indicate that up to thirty percent of academic citations generated by generic LLMs contain non-existent DOIs, fake authors, or broken web links that return HTTP 404 errors, violating basic academic integrity standards.
+    \item \textbf{Lack of Systematic Research Methodology:} Standard AI summaries do not follow formal research guidelines. They perform shallow keyword matching without adhering to the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) standard, omitting explicit inclusion and exclusion criteria or screening audit trails.
+    \item \textbf{Neglect of Patent Databases and Copyright:} Existing AI tools focus solely on academic papers and ignore registered patents, leaving researchers unaware of existing commercial IP. Furthermore, they rarely verify whether extracted text complies with open-access licensing terms (such as CC-BY) or fair-use rules.
+\end{enumerate}
+
+The problem addressed by this project is the absence of an autonomous, verified research platform capable of evaluating topic plausibility, conducting systematic literature and patent reviews, validating every cited link in real time, and presenting findings in an interactive, publication-ready format.
+
+% ==============================================================================
+% 5. OBJECTIVES & PROPOSED SCOPE
+% ==============================================================================
+\section{Objectives \& Proposed Scope}
+\textbf{Primary Objective:} To design, implement, and evaluate \textbf{VERITAS}, an autonomous Multi-Agent AI web platform that automates the scientific research lifecycle with strict methodological discipline, patent prior-art integration, and verifiable citation integrity.
+
+\noindent
+\textbf{Specific Technical Objectives:}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Plausibility Gatekeeping:} Build an ontology-driven validator that checks subject-action-object triples against scientific databases (Wikidata, NCBI Taxonomy) to immediately intercept and refute impossible topics.
+    \item \textbf{PRISMA Systematic Review Protocol:} Formalize automated query decomposition, search logging, deduplication, and multi-stage eligibility screening based on PRISMA 2020 guidelines.
+    \item \textbf{Dual Literature and Patent Discovery:} Query research papers (arXiv, Semantic Scholar, PubMed, Crossref) and patents (Google Patents, USPTO) concurrently to provide an integrated research and prior-art landscape.
+    \item \textbf{Live Source and Link Verification:} Execute asynchronous HTTP status checks ($200\text{ OK}$) and Crossref metadata cross-matching on every cited DOI to guarantee zero dead links or fabricated citations.
+    \item \textbf{IP and Copyright Auditing:} Audit open-access licensing terms and check syntactic overlap to ensure fair-use compliance and prevent verbatim text copying.
+    \item \textbf{Interactive Web Cockpit and Export:} Develop a modern web dashboard with real-time agent execution telemetry, split-pane PDF claim inspection, an interactive citation graph, and one-click export into standard IEEE and ACM LaTeX templates.
+\end{itemize}
+
+% ==============================================================================
+% 6. LITERATURE SURVEY & RELATED WORK
+% ==============================================================================
+\section{Literature Survey \& Related Work}
+Automated literature review and academic synthesis have attracted significant attention in artificial intelligence and natural language processing. Existing research and commercial tools can be categorized into three main paradigms:
+
+\begin{enumerate}[leftmargin=*,noitemsep]
+    \item \textbf{Traditional Academic Search Engines:} Platforms such as Google Scholar, Semantic Scholar, and PubMed provide indexed keyword and citation search across peer-reviewed repositories. Semantic Scholar introduced the Literature Graph, using machine learning to track citations and author influence. While these platforms provide accurate bibliographic metadata and authentic DOIs, they require users to read and synthesize papers manually without automated summarization or cross-paper synthesis.
+    \item \textbf{Single-Agent AI Summarization Assistants:} Tools such as Elicit, Consensus, and Scite have integrated large language models to extract key findings from abstracts. Scite analyzes whether subsequent publications support or refute a given claim, while Consensus provides automated summaries of consensus across multiple papers. However, these systems rely on single-agent prompt architectures that cannot perform iterative multi-step reasoning, lack patent prior-art discovery, and do not enforce systematic screening protocols like PRISMA.
+    \item \textbf{Multi-Agent Reasoning and Reflection Frameworks:} Recent developments in multi-agent systems, such as AutoGen, LangGraph, and Reflexion, demonstrate that dividing complex tasks among specialized collaborative agents significantly outperforms single-prompt architectures. The Reflexion framework showed that verbal reinforcement through an iterative critic-evaluator loop substantially reduces reasoning errors and hallucinations. Similarly, GraphRAG demonstrated that constructing knowledge graphs over document chunks improves query-focused multi-document summarization.
+\end{enumerate}
+
+Despite these advancements, no existing platform unifies ontological plausibility checking, PRISMA systematic review methodology, patent prior-art exploration, live HTTP link verification, and split-pane PDF inspection within a single cohesive web application. VERITAS bridges this critical research gap.
+
+% ==============================================================================
+% 7. PROPOSED SYSTEM & WORKING METHODOLOGY
+% ==============================================================================
+\section{Proposed System \& Working Methodology}
+VERITAS is designed as an autonomous, multi-agent platform that executes the scientific research lifecycle through specialized agents working in an iterative, closed-loop state machine. Rather than treating literature review as a one-shot text generation problem, VERITAS divides the workflow into five disciplined stages:
+
+\subsection{Stage 1: Ontological Plausibility Filtering}
+When a user submits a research topic through the web console, the Plausibility Agent intercepts the query before any web searches are initiated. The agent extracts the semantic subject, predicate, and object of the query and checks them against structured scientific taxonomies, including Wikidata and the NCBI Taxonomy database. If the agent detects a fundamental physical or biological contradiction, the system terminates the review pipeline and returns a grounded scientific explanation detailing why the premise is impossible. This prevents computational waste and eliminates gullibility-driven hallucinations.
+
+\subsection{Stage 2: PRISMA 2020 Systematic Literature Review}
+If the research topic is confirmed to be scientifically plausible, the PRISMA Methodology Agent takes control. Following the formal PRISMA 2020 framework, the agent decomposes the user topic into targeted sub-questions, generates Boolean search queries with appropriate synonyms, and defines clear inclusion and exclusion criteria based on publication years, study methodology, and empirical evidence standards.
+
+\subsection{Stage 3: Concurrent Academic and Patent Prior-Art Discovery}
+The search strategy is executed concurrently across two parallel retrieval streams:
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Academic Search Stream:} The Academic Search Agent queries open-access scholarly APIs, including Semantic Scholar (S2AG), arXiv, PubMed, and Crossref, retrieving candidate paper abstracts, citation metrics, and full open-access PDF documents.
+    \item \textbf{Patent Prior-Art Stream:} The Patent Agent queries the Google Patents Public Data API and the USPTO PatentsView database. This enables researchers to identify registered commercial inventions, technological claims, and assignee landscapes related to their research topic, ensuring their proposed work addresses genuine research gaps without infringing existing intellectual property.
+\end{itemize}
+
+\subsection{Stage 4: Real-Time Source and Link Verification}
+Every candidate citation retrieved by the search agents is routed through the Source and Link Verifier Agent before inclusion in the review draft. The agent executes non-blocking asynchronous HTTP GET requests to test that each URL resolves with status code $200\text{ OK}$. Concurrently, it queries the official Crossref REST API to cross-match the cited paper title, authors, publication year, and journal against official DOI registry records. Any citation that fails either check is permanently purged from the bibliography, establishing a zero-tolerance guarantee against dead links and fabricated citations.
+
+\subsection{Stage 5: Closed-Loop Academic Synthesis and Reflection}
+Once the verified evidence corpus is assembled, the Academic Synthesizer Agent writes the literature review, structuring it into standard sections: conceptual taxonomy, comparative benchmark matrices, and open research challenges. The draft is passed to the Peer-Review Critic Agent, which evaluates every claim against the retrieved source chunks. If a claim lacks empirical backing or falls below an entailment confidence threshold of ninety percent, the state machine triggers targeted re-retrieval, ensuring the draft converges to an accurate, fully supported report.
+
+% ==============================================================================
+% 8. SYSTEM ARCHITECTURE & MODULE DETAILS
+% ==============================================================================
+\section{System Architecture \& Module Details}
+VERITAS organizes eight specialized autonomous agents within a cyclic StateGraph managed via LangGraph, as summarized in Table~\ref{tab:agent_roles}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{4.6cm} X}
+\toprule
+\textbf{Specialized Agent} & \textbf{Core Functionality} & \textbf{Tools \& Standards Applied} \\
+\midrule
+\textbf{1. Plausibility Agent} & Checks scientific sanity; stops absurd prompts (e.g., ``elephant egg''). & Wikidata Ontologies, NCBI Taxonomy, NLI model. \\
+\textbf{2. PRISMA Protocol Agent} & Sets search keywords, year bounds, and inclusion/exclusion criteria. & PRISMA 2020 Protocol, Boolean query builder. \\
+\textbf{3. Academic Searcher} & Queries scholarly databases for paper abstracts, metadata, and PDFs. & Semantic Scholar (S2AG), arXiv API, PubMed, Crossref. \\
+\textbf{4. Patent Prior-Art Agent} & Searches registered patents to identify prior inventions and assignee claims. & Google Patents Public API, USPTO PatentsView. \\
+\textbf{5. Source \& Link Verifier} & Tests live URL status ($200\text{ OK}$) and confirms DOIs against Crossref. & Asynchronous `aiohttp` pinger, DOI proxy (`doi.org`). \\
+\textbf{6. IP \& Copyright Auditor} & Checks paper licenses (CC-BY vs. proprietary) and avoids plagiarism. & Creative Commons validator, N-gram overlap checker. \\
+\textbf{7. Academic Synthesizer} & Writes structured survey sections: Taxonomies, Comparisons, and Gaps. & Academic templates, LaTeX and BibTeX compiler. \\
+\textbf{8. Peer-Review Critic} & Audits drafts against review criteria; triggers re-retrieval if gaps exist. & Multi-agent reflection loop, rubric evaluation. \\
+\bottomrule
+\end{tabularx}
+\caption{VERITAS Multi-Agent Roles and Verification Responsibilities.}
+\label{tab:agent_roles}
+\end{table}
+
+\subsection{Web Platform Architecture}
+The user-facing platform is built with Next.js 14 and React, communicating with a high-performance FastAPI backend. Because systematic research loops require two to four minutes of deep exploration across dozens of papers and patents, long-running tasks are handled asynchronously using Celery and Redis. The frontend displays real-time agent execution telemetry via WebSockets and Server-Sent Events, streaming search queries, evaluated links, and reasoning steps as they occur. When the synthesis is complete, users interact with a dual-pane reader where clicking any sentence highlights the exact source passage in the original PDF alongside its live verification badge, an interactive D3.js citation network, and one-click export into ready-to-compile IEEE and ACM LaTeX archives.
+
+% ==============================================================================
+% 9. TECHNOLOGY STACK
+% ==============================================================================
+\section{Technology Stack}
+The implementation of VERITAS utilizes modern open-source technologies across each architectural tier:
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Frontend User Interface:} Next.js 14, React, TailwindCSS, D3.js (Interactive Citation Graph), Lucide Icons.
+    \item \textbf{Backend \& Real-Time Gateway:} FastAPI (Python 3.10+), WebSockets, Server-Sent Events (SSE), Uvicorn.
+    \item \textbf{Asynchronous Task Queue \& Cache:} Celery, Redis (for long-running research jobs and state checkpointing).
+    \item \textbf{Multi-Agent Orchestration:} LangGraph (StateGraph cyclical DAG with human-in-the-loop intervention).
+    \item \textbf{Language Models:} Gemini 1.5 Pro and GPT-4o for reasoning alongside lightweight local models for extraction.
+    \item \textbf{Vector Store \& Indexing:} ChromaDB, BM25 Hybrid Retriever, NetworkX (Citation Graphs).
+    \item \textbf{Academic \& Patent APIs:} Semantic Scholar (S2AG), arXiv API, PubMed API, Crossref REST API, Google Patents, USPTO PatentsView.
+    \item \textbf{Document Processing \& IP Auditing:} PyMuPDF, Spacy (N-gram overlap checking for copyright compliance).
+    \item \textbf{Evaluation Suite:} RAGAS (Faithfulness, Context Recall), PRISMA 2020 Protocol Validation.
+\end{itemize}
+
+% ==============================================================================
+% 10. EXPECTED DELIVERABLES & OUTCOMES
+% ==============================================================================
+\section{Expected Deliverables \& Outcomes}
+The project will deliver the following key software and academic artifacts upon completion:
+\begin{enumerate}[leftmargin=*,noitemsep]
+    \item \textbf{Functional Multi-Agent Web Platform:} A deployed web application executing autonomous academic discovery, real-time telemetry streaming, and dual-pane claim inspection.
+    \item \textbf{PRISMA Systematic Review Reports:} Comprehensive literature reviews with formal methodology sections, Boolean query audit trails, and comparative taxonomy tables.
+    \item \textbf{Integrated Literature and Patent Landscape:} Unified prior-art maps combining academic papers with commercial patents to identify unaddressed research gaps.
+    \item \textbf{100\% Verified Live Citations:} Total elimination of dead links and fake citations through asynchronous HTTP 200 checks and Crossref registry matching.
+    \item \textbf{Publication-Grade Export Engine:} Automated compilation of verified reviews into IEEE/ACM LaTeX documents, PDFs, and authenticated BibTeX collections.
+\end{enumerate}
+
+% ==============================================================================
+% 11. PROJECT WORK PLAN & TIMELINE (6 MONTHS)
+% ==============================================================================
+\section{Project Work Plan \& Timeline (6 Months)}
+The project is structured across six development phases spanning six academic months, as detailed in Table~\ref{tab:milestones}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l p{4.2cm} X}
+\toprule
+\textbf{Timeline} & \textbf{Development Phase} & \textbf{Key Deliverables} \\
+\midrule
+\textbf{Month 1} & Requirements \& Ontology Setup & Final architecture design, ontology database for plausibility testing. \\
+\textbf{Month 2} & Retrieval \& Ingestion Pipelines & API connectors for Semantic Scholar, arXiv, Google Patents, and Crossref. \\
+\textbf{Month 3} & Multi-Agent Graph Implementation & LangGraph state machine orchestrating PRISMA rules, search, and synthesis. \\
+\textbf{Month 4} & Verification \& IP Guardrails & Live link testing, DOI validation, and copyright compliance checker. \\
+\textbf{Month 5} & Interface \& IEEE/ACM Export & Interactive research dashboard, LaTeX/PDF exporter, and BibTeX compiler. \\
+\textbf{Month 6} & Benchmarking \& Final Dissertation & Evaluation via RAGAS, user validation, and project thesis submission. \\
+\bottomrule
+\end{tabularx}
+\caption{6-Month Work Plan and Milestone Schedule.}
+\label{tab:milestones}
+\end{table}
+
+% ==============================================================================
+% 12. CONCLUSION & FUTURE SCOPE
+% ==============================================================================
+\section{Conclusion \& Future Scope}
+\textbf{VERITAS} transforms automated academic literature reviews from superficial, hallucination-prone AI summaries into a methodologically disciplined, verified, and legally compliant research workflow. By uniting semantic plausibility screening, PRISMA systematic review standards, concurrent patent prior-art exploration, and live cryptographic link verification, VERITAS ensures that AI-assisted research meets the rigorous standards demanded by universities, patent offices, and academic publishers. The platform saves researchers dozens of hours of manual labor while eliminating fake citations and broken links. Future enhancements will extend VERITAS toward automated code repository verification and interactive visual hypothesis testing, establishing a comprehensive assistant for modern scientific inquiry.
+
+% ==============================================================================
+% REFERENCES
+% ==============================================================================
+\begin{thebibliography}{99}
+\bibitem{prisma} M.~J.~Page et al., ``The PRISMA 2020 Statement: An Updated Guideline for Reporting Systematic Reviews,'' \emph{The BMJ}, vol.~372, p.~n71, 2021.
+\bibitem{autogen} Q.~Wu et al., ``AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework,'' \emph{arXiv:2308.08155}, 2023.
+\bibitem{reflexion} N.~Shinn et al., ``Reflexion: Language Agents with Verbal Reinforcement Learning,'' in \emph{NeurIPS}, 2023.
+\bibitem{react} S.~Yao et al., ``ReAct: Synergizing Reasoning and Acting in Language Models,'' in \emph{ICLR}, 2023.
+\bibitem{graphrag} D.~Edge et al., ``From Local to Global: A Graph RAG Approach to Query-Focused Summarization,'' \emph{arXiv:2404.16130}, 2024.
+\bibitem{ragas} S.~Es et al., ``RAGAS: Automated Evaluation of Retrieval Augmented Generation,'' in \emph{Proc. EACL}, 2024.
+\bibitem{s2ag} W.~Ammar et al., ``Construction of the Literature Graph in Semantic Scholar,'' in \emph{Proc. NAACL}, 2018.
+\end{thebibliography}
+
+\end{document}
