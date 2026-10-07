@@ -86,7 +86,7 @@ To ensure smooth collaboration, the project is divided into 5 independent yet in
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/sachinn-alt/VERITAS.git
+git clone https://github.com/Code-Blooded-CS/VERITAS.git
 cd VERITAS
 ```
 
@@ -121,7 +121,7 @@ git push -u origin feature/your-branch-name
 ```
 
 ### 5. Open a Pull Request (PR)
-1. Go to the repository on GitHub: `https://github.com/sachinn-alt/VERITAS`.
+1. Go to the repository on GitHub: `https://github.com/Code-Blooded-CS/VERITAS`.
 2. Click **Compare & pull request**.
 3. Add a clear description of your changes.
 4. Request review from team members (Team Leader **Pritam Jana**).
