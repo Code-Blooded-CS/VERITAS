@@ -95,6 +95,23 @@ VERITAS is built and maintained by the **Code Blooded** engineering team:
 
 ## 🛠️ Getting Started
 
+> [!NOTE]
+> **Project Status (Pre-Implementation):** All product, technical, API, UI/UX, security, and testing specifications are complete in [`docs/`](docs/README.md). Application code scaffolding (`backend/` and `frontend/`) is scheduled next under Phase 0 of the [Execution Plan](docs/05-EXECUTION-PLAN.md).
+
+### 📚 Project Documentation
+
+| Document | Description |
+| :--- | :--- |
+| [**Documentation Index**](docs/README.md) | Overview and recommended reading order |
+| [**Product Requirements (PRD)**](docs/01-PRD.md) | Vision, personas, `FR-1`–`FR-8`, `NFR`s, KPIs, and MVP vs. v1.0 scope |
+| [**Technical Requirements (TRD)**](docs/02-TRD.md) | 4-tier architecture, 8-agent specs, capability router, and NLI/model routing |
+| [**Workflow Diagrams**](docs/03-WORKFLOW-DIAGRAMS.md) | LangGraph StateGraph, SSE sequence, PRISMA funnel, and verification flows |
+| [**API & Data Contracts**](docs/04-API-AND-DATA-CONTRACTS.md) | REST endpoints, SSE events, Pydantic schemas, LangGraph state, and DB tables |
+| [**Execution Plan**](docs/05-EXECUTION-PLAN.md) | Phased roadmap, 6-month milestone alignment, and team ownership |
+| [**UI/UX Specification**](docs/06-UI-UX-SPEC.md) | Next.js 14 Cockpit screens, split-pane PDF provenance, and D3.js graph |
+| [**Test & Evaluation Plan**](docs/07-TEST-AND-EVAL-PLAN.md) | CI gates, adversarial plausibility suite, link integrity, and RAGAS targets |
+| [**Security & ADRs**](docs/08-SECURITY-AND-ADRS.md) | SSRF, prompt-injection, safe LaTeX guardrails, and architecture decisions |
+
 ### Prerequisites
 * Python 3.10+
 * Node.js 18+ & npm / pnpm
