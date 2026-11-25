@@ -111,6 +111,7 @@ VERITAS is built and maintained by the **Code Blooded** engineering team:
 | [**UI/UX Specification**](docs/06-UI-UX-SPEC.md) | Next.js 14 Cockpit screens, split-pane PDF provenance, and D3.js graph |
 | [**Test & Evaluation Plan**](docs/07-TEST-AND-EVAL-PLAN.md) | CI gates, adversarial plausibility suite, link integrity, and RAGAS targets |
 | [**Security & ADRs**](docs/08-SECURITY-AND-ADRS.md) | SSRF, prompt-injection, safe LaTeX guardrails, and architecture decisions |
+| [**UML & DFD Diagrams**](docs/09-UML-AND-DFD-DIAGRAMS.md) | DFD Level 0 & 1, State Machine, Class Diagram, and ER Diagram |
 
 ### Prerequisites
 * Python 3.10+

@@ -17,6 +17,8 @@ This directory contains the complete product, technical, architectural, and oper
 | [06-UI-UX-SPEC.md](./06-UI-UX-SPEC.md) | Next.js 14 Research Cockpit views, split-pane PDF provenance UX, D3.js graph spec, and verification badges | Frontend Lead |
 | [07-TEST-AND-EVAL-PLAN.md](./07-TEST-AND-EVAL-PLAN.md) | Unit/integration test strategy, adversarial plausibility suite, link integrity tests, and RAGAS evaluation | Verification & QA |
 | [08-SECURITY-AND-ADRS.md](./08-SECURITY-AND-ADRS.md) | Practical SSRF/prompt-injection/LaTeX guardrails and Architecture Decision Records (ADRs) | Full team |
+| [09-UML-AND-DFD-DIAGRAMS.md](./09-UML-AND-DFD-DIAGRAMS.md) | DFD Level 0 & 1, State Machine, Class Diagram, and ER Diagram for design & academic reviews | Full team, Project Guide |
+| [`diagrams/`](./diagrams/) | Exported high-res `.png` and vector `.svg` images of all 10 workflow, UML, and DFD diagrams | Presentations & LaTeX report |
 
 ## Recommended Reading Order
 
